@@ -6,4 +6,14 @@
 
 ```bash
 python app.py
+python server.py
+```
+
+4. Try to call the api
+
+```bash
+curl -X POST http://localhost:8800/generate_audio \
+-H "Content-Type: application/json" \
+-d '{"text": "哈哈哈～晚安拉"}'
+
 ```

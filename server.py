@@ -1,6 +1,9 @@
 from flask import Flask, request, jsonify
 import replicate
 from dotenv import load_dotenv
+import requests
+from pydub import AudioSegment
+from io import BytesIO
 
 # Load environment variables
 load_dotenv()
@@ -28,7 +31,14 @@ def generate_audio():
                 "language": "ZH"
             }
         )
-        return jsonify(output)
+        audio_url = output
+        response = requests.get(audio_url)
+        audio_file = AudioSegment.from_file(BytesIO(response.content))
+
+        # Calculate duration in milliseconds
+        duration_ms = len(audio_file)
+
+        return jsonify({'audio_url': audio_url, 'duration_ms': duration_ms})
     except Exception as e:
         return jsonify({'error': str(e)}), 500
 

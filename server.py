@@ -22,7 +22,8 @@ def generate_audio():
     # Call the Replicate API with the provided text
     try:
         output = replicate.run(
-            "cjwbw/openvoice:002cf9fb1ac44f6a172c4ceb868df704a414a8346ac0296310a2d1207226d3a2",
+            "chenxwh/openvoice:d548923c9d7fc9330a3b7c7f9e2f91b2ee90c83311a351dfcd32af353799223d",
+            
             input={
                 "text": input_text,
                 # Audio URL can also be parameterized if needed

@@ -63,7 +63,7 @@ def generate_audio():
         language = language_mapping.get(language_code, 'EN_NEWEST')  # Default to 'EN' if language is not mapped
         logger.info('lang: ' +language)
         # Generate the audio
-        src_path = f'{output_dir}/tmp.wav'
+        src_path = f'{output_dir}/tmp.mp3'
         speed = 1.0
 
         model = TTS(language=language, device=device)

@@ -78,7 +78,7 @@ def generate_audio():
         print('speaker_key', speaker_key)
         
         model.tts_to_file(input_text, speaker_id, src_path, speed=speed)
-        save_path = f'{output_dir}/output_v2_{speaker_key}.wav'
+        save_path = f'{output_dir}/output_v2_{speaker_key}.mp3'
 
         # Run the tone color converter
         encode_message = "@MyShell"

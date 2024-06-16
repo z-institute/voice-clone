@@ -47,8 +47,8 @@ def generate_audio():
 
         # Detect language of the text
         language_code = detect(input_text)
-        print(language_code)
-
+        logger.info(language_code)
+        
         # Map detected language to required language code (e.g., 'zh' for Chinese)
         language_mapping = {
             'en': 'EN_NEWEST',
